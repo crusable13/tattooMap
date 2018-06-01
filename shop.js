@@ -7,8 +7,12 @@ function shop(location, name, url) {
     this.location = location;
     this.shopName = name;
     this.url = url;
+    this.callOutName = function() {
+      console.log(this.shopName);
+    }
 }
 
+// returns an array of shops
 function getShops() {
     return [
         new shop(new loc(39.255, -94.361), "Exile Tattoo", "exiletattoo.net"),
@@ -27,5 +31,4 @@ function getShops() {
         new shop(new loc(39.320, -94.354), "Hand and Dagger Tattoo",
             "https://www.handanddaggertattoo.com")
     ]
-
 }
