@@ -31,7 +31,6 @@ function urlShop(aShop, aMarker) {
 
 
 function initMap2() {
-    debugger
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 9,
         center: centerLoc
@@ -47,7 +46,6 @@ function initMap2() {
             clickable: true,
             label: shop.shopName,
             zoom: 5,
-            visible: isVisible
             /// Label allows for name to be seen at all times for every location. Find a way to have it show you less of them as you zoom out.
         });
 
@@ -62,16 +60,9 @@ function initMap2() {
     var marker = new google.maps.Marker({
         position: centerLoc,
         map: map,
-        title: 'Can you see'
+        label:'Home'
     })
-    //Create a function isVisible that returns a boolean, based on zoom level or no the marker has another marker within .001 lat and or lon.
 
 }
 
-function isVisible(){
-    if (marker.zoom <= 3) {
-        return false
-    } else {
-        return true
-    }
-}
+ // This is my first commit//
