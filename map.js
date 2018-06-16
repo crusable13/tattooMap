@@ -39,13 +39,20 @@ function initMap2() {
     for (i = 0; i < shops.length; i++) {
         /* Developer tool says that shops is undefined. Shops is defined but only inside of another frame. Forgot how to access the information of a frame that is not a parent. */
         var shop = shops[i];
+        function visibleLabel(map) {
+            if (google.maps.Map.zoom < 5) {
+                return false
+            } else {
+                return shop.shopName
+            }
+                };
         marker = new google.maps.Marker({
             position: { lat: shop.location.lat, lng: shop.location.lon },
             map: map,
             title: shop.shopName,
             clickable: true,
-            label: shop.shopName,
-            zoom: 5,
+            label: visibleLabel(map),
+            zoom: 5
             /// Label allows for name to be seen at all times for every location. Find a way to have it show you less of them as you zoom out.
         });
 
