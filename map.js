@@ -28,7 +28,17 @@ function urlShop(aShop, aMarker) {
         window.location.href = aShop.url
     })
 }
-
+//"Everything between these two comments is borrowed code"
+function visiMarker(aMarker) {
+    // Replaced google.maps with aMarker
+    aMarker.event.addListener(map, 'zoom_changed', function(/*My wifi is down right now and my grandma has my phone but I want to see if a zoom changed event must go here*/) {
+        var zoom = map.getZoom();
+        for (i = 0; i < locations.length; i++) {
+            marker[i].setVisible(zoom <= 15);
+        }
+    });
+};
+//"Borrowed Code ends here"
 
 function initMap2() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -40,13 +50,7 @@ function initMap2() {
         /* Developer tool says that shops is undefined. Shops is defined but only inside of another frame. Forgot how to access the information of a frame that is not a parent. */
         var shop = shops[i];
 
-        google.maps.event.addListener(map, 'zoom_changed', function() {
-    var zoom = map.getZoom();
-    // iterate over markers and call setVisible
-    for (i = 0; i < locations.length; i++) {
-        markers[i].setVisible(zoom <= 15);
-    }
-});
+
 
         marker = new google.maps.Marker({
             position: { lat: shop.location.lat, lng: shop.location.lon },
@@ -63,15 +67,14 @@ function initMap2() {
         console.log("shop url " + shop.url);
 
         urlShop(shop, marker);
+        visiMarker(marker);
     }
 
 
     var marker = new google.maps.Marker({
         position: centerLoc,
         map: map,
-        label:'Home'
+        label: 'Home'
     })
 
 }
-
- 
