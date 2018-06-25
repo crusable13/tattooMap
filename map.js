@@ -28,16 +28,18 @@ function urlShop(aShop, aMarker) {
         window.location.href = aShop.url
     })
 }
+
 //"Everything between these two comments is borrowed code"
 function visiMarker(aMarker) {
-    // Replaced google.maps with aMarker
-    aMarker.event.addListener(map, 'zoom_changed', function(/*My wifi is down right now and my grandma has my phone but I want to see if a zoom changed event must go here*/) {
-        var zoom = map.getZoom();
+    // Replaced google.maps.event with aMarker
+    aMarker.event.addListener(map, 'zoom_changed', function() {
+        var zoom = marker[i].getZoom();
         for (i = 0; i < locations.length; i++) {
             marker[i].setVisible(zoom <= 15);
         }
     });
 };
+// Why does it makes all the other markers except the first one invisible?
 //"Borrowed Code ends here"
 
 function initMap2() {
