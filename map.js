@@ -47,12 +47,11 @@ function initMap2() {
         zoom: 9,
         center: centerLoc
     });
+    var markers = [];
 
     for (i = 0; i < shops.length; i++) {
         /* Developer tool says that shops is undefined. Shops is defined but only inside of another frame. Forgot how to access the information of a frame that is not a parent. */
         var shop = shops[i];
-
-
 
         marker = new google.maps.Marker({
             position: { lat: shop.location.lat, lng: shop.location.lon },
@@ -69,8 +68,21 @@ function initMap2() {
         console.log("shop url " + shop.url);
 
         urlShop(shop, marker);
-        visiMarker(marker);
+         markers.push(marker);
     }
+
+    map.addListener('zoom_changed', function() {
+        if (map.getZoom() < 9) {
+            for(i = 0; i < markers.length; i++) {
+                markers[i].setLabel(undefined);
+            }
+        } else {
+            for(i = 0; i < markers.length; i++) {
+                markers[i].setLabel(shops[i].shopName)
+            }
+        }
+        console.log("zoom_changed event fired on map:" + map.getZoom() )
+    });
 
 
     var marker = new google.maps.Marker({
