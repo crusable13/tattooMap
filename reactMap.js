@@ -5,35 +5,7 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-var returnedValues = ["div", "h1", "h2"];
-var jsx = ["h1", "h2", "div", "App", "SearchBox", "form", "input"];
-var varl = ["h1", "h2", "div", "form", "input"]; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>Hello CodeSandbox</h1>
-        <h2>Start editing to see some magic happen!</h2>
-        <SearchBox name="Nathan" showName={true} />
-        <h1>Another header</h1>
-        <SearchBox name="Chris" showName={true} />
-        <h1> Mom's SearchBox </h1>
-        <SearchBox name="Fran" showName={true} />
-      </div>
-    );
-  }
-}
 
-class SearchBox extends React.Component {
-  render() {
-    return (
-      <form>
-        {this.props.showName === true ? this.props.name : "Nothing"}
-        <input type="text" />
-      </form>
-    );
-  }
-}
 
 class MapComponent extends React.Component {
   componentDidMount() {
