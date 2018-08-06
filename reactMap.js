@@ -35,7 +35,7 @@ class MapComponent extends React.Component {
     if (this.props.shops != null) {
       console.log("about to add shop markers ");
       /// Add markers here///
-
+      
       for (var i = 0; i < this.props.shops.length; i++) {
         /* Developer tool says that shops is undefined. Shops is defined but only inside of another frame. Forgot how to access the information of a frame that is not a parent. */
         var shop = this.props.shops[i];
