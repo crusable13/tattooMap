@@ -21,7 +21,8 @@ class ResultCellComponent extends React.Component {
     const style = {
       width: "100vw",
       height: "100vh",
-      backgroundColor: "blue"
+      backgroundColor: "blue",
+      border: "1px" "solid black";
     };
     return (
       <tr id={this.props.shop.id}>
