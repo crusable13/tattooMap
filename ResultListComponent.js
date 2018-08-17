@@ -20,13 +20,13 @@ class ResultCellComponent extends React.Component {
   render() {
     const style = {
       width: "100vw",
-      height: "100vh",
+      height: "10vh",
       backgroundColor: "blue",
-      border: "1px" "solid black";
+      border: "1px solid black"
     };
     return (
       <tr id={this.props.shop.id}>
-        <td>
+        <td style={style}>
           {this.props.shop.shopName}
         </td>
       </tr>
@@ -92,4 +92,5 @@ ReactDOM.render(
   ),
   rootElement
 );
+
 
