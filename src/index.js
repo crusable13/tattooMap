@@ -4,8 +4,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
-import locations from "shop.js"
-import google from "google.com";
+import locations from "shop.js";
+import google from "google.com"
+
 
 
 class MapComponent extends React.Component {

@@ -24,7 +24,7 @@ class MapComponent extends React.Component {
   }
 
   displayMap() {
-    console.log("this inside displa map :" + this);
+    console.log("this inside displayMap :" + this);
     console.log("displayMap called ");
     var map = new google.maps.Map(document.getElementById("map"), {
       zoom: 9,
@@ -96,11 +96,12 @@ class MapComponent extends React.Component {
         <div style={style} id="map">
           Map here
         </div>
-        <div />
+        <div >
       </div>
     );
   }
 }
+
 function myBind(aFunction, obj) {
   return function () {
     console.log("this inside mybind " + this)
