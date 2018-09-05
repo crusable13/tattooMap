@@ -1,12 +1,8 @@
-
-
 import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
 import locations from "shop.js";
-import google from "google.com"
-
 
 
 class MapComponent extends React.Component {
@@ -30,6 +26,15 @@ class MapComponent extends React.Component {
   displayMap() {
     console.log("this inside displa map :" + this);
     console.log("displayMap called ");
+    var mapElement = document.getElementById("map");
+    if (mapElement === null) {
+      const map = document.createElement("map")
+    }
+
+
+
+
+
     var map = new google.maps.Map(document.getElementById("map"), {
       zoom: 9,
       center: this.averageLoction()
@@ -85,8 +90,9 @@ class MapComponent extends React.Component {
   constructor(props) {
     super(props);
 //   this.displayCallback = this.displayMap.bind(this);
-    window.googleReady = this.displayMap.bind(this)
-    console.log("constructor ");
+    var obj = this
+    window.googleReady = this.displayMap.bind(obj)
+    console.log("constructor is done");
     // intentionally empty
   }
   render() {
@@ -100,11 +106,11 @@ class MapComponent extends React.Component {
         <div style={style} id="map">
           Map here
         </div>
-        <div />
       </div>
     );
   }
 }
+
 function myBind(aFunction, obj) {
   return function () {
     console.log("this inside mybind " + this)
