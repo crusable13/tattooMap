@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./styles.css";
-import locations from "shop.js";
+import "./App.css";
+import locations from "./shop.js";
 
 
-class MapComponent extends React.Component {
+export class MapComponent extends React.Component {
   componentDidMount() {
     var google_script_tag = document.getElementById("google_api");
     console.log("google script tag=" + google_script_tag);
@@ -28,14 +28,10 @@ class MapComponent extends React.Component {
     console.log("displayMap called ");
     var mapElement = document.getElementById("map");
     if (mapElement === null) {
-      const map = document.createElement("map")
+      const map = document.createElement("div")
     }
 
-
-
-
-
-    var map = new google.maps.Map(document.getElementById("map"), {
+    var map = new window.google.maps.Map(document.getElementById("map"), {
       zoom: 9,
       center: this.averageLoction()
     });
@@ -46,7 +42,7 @@ class MapComponent extends React.Component {
       for (var i = 0; i < this.props.shops.length; i++) {
         /* Developer tool says that shops is undefined. Shops is defined but only inside of another frame. Forgot how to access the information of a frame that is not a parent. */
         var shop = this.props.shops[i];
-        var marker = new google.maps.Marker({
+        var marker = new window.google.maps.Marker({
           position: shop.location,
           map: map,
           title: shop.shopName,
@@ -118,9 +114,8 @@ function myBind(aFunction, obj) {
   }
 }
 
-
 function visiMarkers(aMarker) {
-  aMarker.event.addListener(map, "zoom_changed", function () {
+  aMarker.event.addListener(aMarker, "zoom_changed", function () {
     var i;
     var zoom = markers[i].getZoom();
     for (i = 0; i < locations.length; i++) {
