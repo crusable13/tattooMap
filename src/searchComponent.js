@@ -1,3 +1,13 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
+import "./App.css";
+import locations from "./shop.js";
+import MapComponent from "./index.js";
+import shops from "./index.js";
+import "./ResultListComponent.js"
+
+
 class SearchComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -14,13 +24,8 @@ class SearchComponent extends React.Component {
   }
 }
 
-ReactDOM.render(
-  //  (<ResultListComponent shops={shops} resultHover={onResultHover} />
-  <SearchComponent shops={shops} resultHover={onResultHover} />,
-  //  <table>
-  //     <ResultCellComponent shop={shops[0]} resultHover={onResultHover}/>
-  //     <ResultCellComponent shop={shops[1]} resultHover={onResultHover}/>
 
-  //  </table>
+ReactDOM.render(
+  <SearchComponent shops={shops} resultHover={onResultHover} />,
   rootElement
 );

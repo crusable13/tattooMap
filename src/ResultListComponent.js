@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./styles.css";
 
-class ResultCellComponent extends React.Component {
+export class ResultCellComponent extends React.Component {
   componentDidMount() {
     console.log("componentDidMount Called " + this.props.shop.id)
     var rowElement = document.getElementById(this.props.shop.id)
@@ -51,7 +51,7 @@ function onResultHover(id) {
 };
 
 
-class ResultListComponent extends React.Component {
+export class ResultListComponent extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -82,7 +82,10 @@ table, th, td {
 };
 
 ReactDOM.render(
-  (<ResultListComponent shops={shops} resultHover={onResultHover} />
+  (<ResultListComponent 
+    shops={shops} 
+    resultHover={onResultHover}
+     />
     //  <table>
     //     <ResultCellComponent shop={shops[0]} resultHover={onResultHover}/>
     //     <ResultCellComponent shop={shops[1]} resultHover={onResultHover}/>
