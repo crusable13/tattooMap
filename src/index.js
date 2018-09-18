@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./App.css";
 import locations from "./shop.js";
 import {MapComponent} from "./reactMap.js"
-import SearchComponent from "SearchComponent"
+import {SearchComponent} from "./searchComponent.js"
 
 function myBind(aFunction, obj) {
   return function () {
@@ -45,6 +45,6 @@ function hover(id) {
 }
 
 ReactDOM.render(
-  <SearchComponent shops={shops} resultHover={onResultHover} onResultClick={resultClick} isVisible={visiMarkers}/>,
+  <SearchComponent shops={shops} resultHover={hover} onResultClick={resultClick} isVisible={visiMarkers}/>,
   rootElement
 );
