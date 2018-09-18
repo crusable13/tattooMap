@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
 import locations from "./shop.js";
-import MapComponent from "./reactMap.js"
+import {MapComponent} from "./reactMap.js"
 
 function myBind(aFunction, obj) {
   return function () {
