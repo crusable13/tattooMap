@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import "./App.css";
 import "./shop.js";
-import "./index.js";
-import "./ResultListComponent.js"
+import {ResultListComponent} from"./ResultListComponent.js";
+import {MapComponent} from"./reactMap.js";
 
 
-class SearchComponent extends React.Component {
+export class SearchComponent extends React.Component {
   constructor(props) {
     super(props);
     this.shops = props.shops;
@@ -28,7 +27,3 @@ class SearchComponent extends React.Component {
 }
 
 
-ReactDOM.render(
-  <SearchComponent shops={shops} resultHover={onResultHover} onResultClick={resultClick} isVisible={visiMarkers}/>,
-  rootElement
-);
