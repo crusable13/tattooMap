@@ -25,26 +25,20 @@ function visiMarkers(aMarker) {
 
 var shops = [
   {
-    id: "1",
+    id: "0",
     location: { lat: 39.255, lng: -94.361 },
     shopName: "first Place"
   },
   {
-    id: "2",
+    id: "1",
     location: { lat: 39.5, lng: -94.361 },
     shopName: "seccond Name"
   }
 ];
 var markers = [];
 const rootElement = document.getElementById("root");
-function resultClick(id) {
-  console.log("You just clicked something with an id:" + id);
-}
-function hover(id) {
-  console.log("You just hovered:" + id);
-}
 
 ReactDOM.render(
-  <SearchComponent shops={shops} resultHover={hover} onResultClick={resultClick} isVisible={visiMarkers}/>,
+  <SearchComponent shops={shops} resultHover={hover} onResultClick={resultClick} isVisible={visiMarkers} />,
   rootElement
 );

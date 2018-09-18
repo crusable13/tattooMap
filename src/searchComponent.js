@@ -15,7 +15,17 @@ export class SearchComponent extends React.Component {
     this.visiMarkers = props.visiMarkers
 
 
+
   }
+
+  resultClick(id) {
+  console.log("You just clicked something with an id:" + id);
+  }
+
+  hover(id) {
+  console.log("You just hovered:" + id);
+  }
+  
   render() {
     return (
       <div>
