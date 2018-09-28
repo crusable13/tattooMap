@@ -13,7 +13,7 @@ export class SearchComponent extends React.Component {
     this.onHover = props.resultHover;
     this.onClick = props.resultClick;
     this.visiMarkers = props.visiMarkers
-
+    this.state = {hightlightIndex: -1}
 
 
   }
@@ -22,15 +22,16 @@ export class SearchComponent extends React.Component {
   console.log("You just clicked something with an id:" + id);
   }
 
-  hover(id) {
-  console.log("You just hovered:" + id);
-  }
+  onResultHover(id) {
+  console.log("onResultHover called " + id);
+  this.setState({ hightlightIndex: id });
+};
   
   render() {
     return (
       <div>
         <ResultListComponent shops={this.shops} resultHover={this.onHover} />
-        <MapComponent shops={this.shops} onResultHover={this.onHover} onResultClick={this.onClick} isVisible={this.visiMarkers} />
+        <MapComponent shops={this.shops} resultHover={this.onHover} onResultClick={this.onClick} isVisible={this.visiMarkers}  />
       </div>
     );
   }

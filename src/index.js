@@ -38,7 +38,13 @@ var shops = [
 var markers = [];
 const rootElement = document.getElementById("root");
 
+ 
+
+ function resultClick(id) {
+  console.log("You just clicked something with an id:" + id);
+  }
+
 ReactDOM.render(
-  <SearchComponent shops={shops} resultHover={hover} onResultClick={resultClick} isVisible={visiMarkers} />,
+  <SearchComponent shops={shops} resultHover={SearchComponent.onResultHover} onResultClick={resultClick} isVisible={visiMarkers} />,
   rootElement
 );

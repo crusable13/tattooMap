@@ -46,10 +46,6 @@ const shops = [
   }
 ]
 const rootElement = document.getElementById("root")
- onResultHover(id) {
-  console.log("onResultHover called " + id);
-  this.setState({ hightlightIndex: id });
-};
 
 
 export class ResultListComponent extends React.Component {
@@ -81,9 +77,9 @@ export class ResultListComponent extends React.Component {
           color={color}
         />
       );
-      cells1.push(cell);
+      cells.push(cell);
     }
-    
+
     return (
       /*
       <style>
@@ -107,7 +103,7 @@ table, th, td {
 ReactDOM.render(
   (<ResultListComponent 
     shops={shops} 
-    resultHover={onResultHover}
+    resultHover={this.onResultHover}
      />
     //  <table>
     //     <ResultCellComponent shop={shops[0]} resultHover={onResultHover}/>
