@@ -46,6 +46,6 @@ const rootElement = document.getElementById("root");
 
 
 ReactDOM.render(
-  <SearchComponent shops={shops} resultHover={onResultHover} onResultClick={resultClick} isVisible={visiMarkers} />,
+  <SearchComponent shops={shops} onResultClick={resultClick} isVisible={visiMarkers} />,
   rootElement
 );
