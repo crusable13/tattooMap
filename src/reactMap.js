@@ -53,14 +53,14 @@ export class MapComponent extends React.Component {
   }
 
   addHoverHandler(aShop, aMarker, hoverFunction) {
-    aMarker.addListener("mouseover", function(event) {
+    aMarker.addListener("mouseover", function(event) {   
       hoverFunction(aShop.id);
     });
   }
   
   addClickHandler(aShop, aMarker, clickFunction) {
     aMarker.addListener("click", function(event) {
- //     this.props.onResultClick(shop.id)
+ //     this.props.onResultClick(aShop.id)
       clickFunction(aShop.id);
     });
   } 

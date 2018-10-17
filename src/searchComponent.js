@@ -31,7 +31,7 @@ export class SearchComponent extends React.Component {
     return (
       <div>
         <ResultListComponent shops={this.shops} resultHover={this.onHover} />
-        <MapComponent shops={this.shops} resultHover={this.onHover} onResultClick={this.onClick} isVisible={this.visiMarkers}  />
+        <MapComponent shops={this.shops} onResultHover={this.onHover} onResultClick={this.onClick} isVisible={this.visiMarkers}  />
       </div>
     );
   }
