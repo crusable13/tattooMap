@@ -30,7 +30,7 @@ export class SearchComponent extends React.Component {
     render() {
         return (
             <div>
-        <ResultListComponent shops={this.shops} resultHover={this.onHover} />
+        <ResultListComponent shops={this.shops} resultHover={this.onHover} hightlightIndex={this.state.hightlightIndex}/>
         <MapComponent shops={this.shops} onResultHover={this.onResultHover.bind(this)} onResultClick={this.onClick} isVisible={this.visiMarkers}  />
       </div>
         );

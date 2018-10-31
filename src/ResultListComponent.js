@@ -21,7 +21,7 @@ export class ResultCellComponent extends React.Component {
     const style = {
       width: "100vw",
       height: "10vh",
-      backgroundColor: "blue",
+      backgroundColor: this.props.color,
       border: "2px solid black"
     };
     return (
@@ -51,7 +51,7 @@ const rootElement = document.getElementById("root")
 export class ResultListComponent extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { hightlightIndex: -1 };
+    this.state = { hightlightIndex: props.hightlightIndex };
   }
 
   onResultHover(id) {
