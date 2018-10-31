@@ -81,16 +81,7 @@ export class ResultListComponent extends React.Component {
     }
 
     return (
-      /*
-      <style>
-        thead {color: green;}
-tbody {color: blue;}
-tfoot {color: red;}
-        
-table, th, td {
-          border: 1px solid black;
-    }
-</style>  */  // I got this idea from example code at https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_tbody but for some reason no matter which render I put it in it won't work
+  
       <table >
         <tbody>
           {cells}
@@ -105,11 +96,7 @@ ReactDOM.render(
     shops={shops} 
     resultHover={this.onResultHover}
      />
-    //  <table>
-    //     <ResultCellComponent shop={shops[0]} resultHover={onResultHover}/>
-    //     <ResultCellComponent shop={shops[1]} resultHover={onResultHover}/>
-
-    //  </table>
+    
   ),
   rootElement
 );

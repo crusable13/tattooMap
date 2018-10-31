@@ -35,7 +35,7 @@ export class MapComponent extends React.Component {
       /// Add markers here///
       
       for (var i = 0; i < this.props.shops.length; i++) {
-        /* Developer tool says that shops is undefined. Shops is defined but only inside of another frame. Forgot how to access the information of a frame that is not a parent. */
+/* Developer tool says that shops is undefined. Shops is defined but only inside of another frame. Forgot how to access the information of a frame that is not a parent. */
         var shop = this.props.shops[i];
         var marker = new window.google.maps.Marker({
           position: shop.location,
@@ -44,7 +44,6 @@ export class MapComponent extends React.Component {
           clickable: true,
           label: shop.shopName,
           zoom: 5
-          /// Label allows for name to be seen at all times for every location. Find a way to have it show you less of them as you zoom out
         });
         this.addClickHandler(shop, marker, this.props.onResultClick)
         this.addHoverHandler(shop, marker, this.props.onResultHover)
